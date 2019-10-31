@@ -1,6 +1,6 @@
-import pp from 'preprocess';
+const pp = require('preprocess');
 
-export default function kontra(defs) {
+module.exports = function kontra(defs) {
   // ensure defs are uppercase
   Object.keys(defs).forEach(def => {
     defs[def.toUpperCase()] = defs[def]
