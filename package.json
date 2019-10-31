@@ -16,5 +16,10 @@
   "license": "MIT",
   "dependencies": {
     "preprocess": "github:straker/preprocess"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.2.2",
+    "proxyquire": "^2.1.3"
   }
 }
