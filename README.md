@@ -23,4 +23,4 @@ export default {
 
 ## Options
 
-See [Kontra.js docs]() for a list of available options. All options default to `false`.
+See [Kontra.js docs](https://straker.github.io/kontra/custom-builds) for a list of available options. All options default to `false`.
