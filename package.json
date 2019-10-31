@@ -1,0 +1,20 @@
+{
+  "name": "rollup-plugin-kontra",
+  "version": "1.0.0",
+  "description": "Rollup plugin for Kontra.js to remove unused code from Classes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "rollup",
+    "rollup-plugin",
+    "kontra",
+    "js13k"
+  ],
+  "author": "Steven Lambert <steven@sklambert.com> (http://sklambert.com/)",
+  "license": "MIT",
+  "dependencies": {
+    "preprocess": "github:straker/preprocess"
+  }
+}
