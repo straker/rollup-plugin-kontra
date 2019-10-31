@@ -1,6 +1,6 @@
 import pp from 'preprocess';
 
-export default function preprocessKontra(defs) {
+export default function kontra(defs) {
   // ensure defs are uppercase
   Object.keys(defs).forEach(def => {
     defs[def.toUpperCase()] = defs[def]
