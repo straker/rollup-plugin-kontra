@@ -35,4 +35,4 @@ export default {
 
 ## Options
 
-See [Kontra.js docs](https://straker.github.io/kontra/custom-builds) for a list of available options. All options default to `false`.
+See [Kontra.js docs](https://straker.github.io/kontra/custom-builds#rollup-plugin-kontra) for a list of available options. All options default to `false`.
