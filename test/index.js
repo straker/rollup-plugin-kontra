@@ -50,18 +50,9 @@ describe('rollup-plugin-kontra', () => {
       ppText = [];
     });
 
-    it('should call preprocess for each bundle', () => {
-      kontra().generateBundle(null, {
-        bundle1: {
-         code: 'my code'
-        },
-        bundle2: {
-          code: 'another code'
-        }
-      });
-
+    it('should call preprocess', () => {
+      kontra().renderChunk('my code');
       expect(ppText[0]).to.equal('my code');
-      expect(ppText[1]).to.equal('another code');
     });
 
     it('should pass the flatten context', () => {
@@ -71,50 +62,18 @@ describe('rollup-plugin-kontra', () => {
         }
       };
 
-      kontra(context).generateBundle(null, {
-        bundle1: {
-         code: 'my code'
-        },
-        bundle2: {
-          code: 'another code'
-        }
-      });
-
+      kontra(context).renderChunk('my code');
       expect(ppContext).to.deep.equal(flatten(context));
     });
 
     it('should set type as js', () => {
-      kontra().generateBundle(null, {
-        bundle1: {
-         code: 'my code'
-        },
-        bundle2: {
-          code: 'another code'
-        }
-      });
-
+      kontra().renderChunk('my code');
       expect(ppOptions).to.deep.equal({type: 'js'});
     });
 
-    it('should set the bundle code to the output of preprocess', () => {
-      const bundles = {
-        bundle1: {
-         code: 'my code'
-        },
-        bundle2: {
-          code: 'another code'
-        }
-      };
-
-      kontra().generateBundle(null, bundles);
-      expect(bundles).to.deep.equal({
-        bundle1: {
-          code: 'Preprocess text'
-        },
-        bundle2: {
-          code: 'Preprocess text'
-        }
-      });
+    it('should return the output of preprocess', () => {
+      let code = kontra().renderChunk('my code');
+      expect(code).to.equal('Preprocess text');
     });
   });
 });

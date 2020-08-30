@@ -22,11 +22,8 @@ function flatten(obj, prefix = '') {
 module.exports = function kontra(context = {}) {
   return {
     name: 'kontra',
-    generateBundle(options, bundle) {
-      Object.keys(bundle).forEach(name => {
-        let output = pp.preprocess(bundle[name].code, flatten(context), {type: 'js'});
-        bundle[name].code = output;
-      });
+    renderChunk(code, chunk, outputOptions) {
+      return pp.preprocess(code, flatten(context), { type: 'js' });
     }
   };
 }
